@@ -12,35 +12,70 @@
 
   <style>
     body { font-family: 'Poppins', sans-serif; margin: 0; background: #fff; color: #333; line-height: 1.6; }
-    header { text-align: center; padding: 120px 20px 100px; background: url('header-bg.jpg') no-repeat center/cover; color: white; position: relative; }
-    header::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 1; }
+    
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 80px 20px 60px; /* reduced height */
+      background: url('header-bg.jpg') no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
     header img, header h1, header p, header .button { position: relative; z-index: 2; }
-    header img { width: 200px; height: 200px; border-radius: 40%; border: 4px solid white; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); display: block; margin-left: auto; margin-right: auto; }
+    header img {
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      object-fit: cover; /* crop image */
+      border: 4px solid white;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      display: block; margin-left: auto; margin-right: auto;
+    }
+
+    /* NAV */
     nav { text-align: center; background: #222; padding: 10px; position: sticky; top: 0; z-index: 10; }
     nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
     nav a:hover { color: #00aaff; }
+
+    /* SECTIONS */
     section { max-width: 900px; margin: auto; padding: 40px 20px; }
     section:nth-child(even) { background: #f9f9f9; }
     h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-    .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+
+    /* CARDS */
+    .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: all 0.3s ease; }
     .card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
-    /* Project cards */
-    .project-card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
+    /* PROJECT CARDS */
+    .project-card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px;
+                   box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
     .project-card:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
     .project-card .hover-detail { display: none; color: #555; font-style: italic; margin-top: 5px; }
     .project-card:hover .hover-detail { display: block; }
     .project-card .full-detail { display: none; margin-top: 15px; color: #333; }
     .project-card.active .full-detail { display: block; }
 
+    /* SKILLS GRID */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+
+    /* FOOTER */
     footer { text-align: center; background: #222; color: #fff; padding: 20px; margin-top: 40px; }
-    a.button { display: inline-block; padding: 10px 15px; background: #007BFF; color: #fff; border-radius: 4px; text-decoration: none; transition: background 0.3s; }
+    a.button { display: inline-block; padding: 10px 15px; background: #007BFF; color: #fff; border-radius: 4px;
+               text-decoration: none; transition: background 0.3s; }
     a.button:hover { background: #0056b3; }
   </style>
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
     <img src="myphoto.jpg" alt="Pradyoth Goparaju">
     <h1>Pradyoth Goparaju</h1>
@@ -48,6 +83,7 @@
     <a class="button" href="mailto:saipradyothgoparaju@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
   </header>
 
+  <!-- NAV -->
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -191,6 +227,7 @@
     <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sai-pradyoth-goparaju-474bbb167" target="_blank">LinkedIn Profile</a></p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Pradyoth Goparaju. All rights reserved.</p>
   </footer>
