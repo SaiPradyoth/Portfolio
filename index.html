@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pradyoth Goparaju | Portfolio</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -16,35 +18,38 @@
       color: #333;
       line-height: 1.6;
     }
+
+    /* ---------- HEADER ---------- */
+    header {
+      text-align: center;
+      padding: 120px 20px 100px;
+      background: url('header-bg.jpg') no-repeat center center/cover;
+      color: white;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    header img, header h1, header p, header .button {
+      position: relative;
+      z-index: 2;
+    }
     header img {
-  width: 200px;             /* Bigger photo */
-  height: 200px;            /* Keep it square */
-  border-radius: 40%;       /* Circular */
-  border: 4px solid white;  /* Visible border */
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;       /* Center it */
-}
-header {
-  text-align: center;
-  padding: 120px 20px 100px;  /* More top space */
-  background: url('header-bg.jpg') no-repeat center center/cover;
-  color: white;
-  position: relative;
-}
-header::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.3);  /* Softer overlay */
-  z-index: 1;
-}
-header h1, header p, header .button, header img {
-  position: relative;
-  z-index: 2;
-}
+      width: 200px; height: 200px;
+      border-radius: 40%;
+      border: 4px solid white;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      display: block;
+      margin-left: auto; margin-right: auto;
+    }
+
+    /* ---------- NAV ---------- */
     nav {
       text-align: center;
       background: #222;
@@ -61,6 +66,8 @@ header h1, header p, header .button, header img {
       transition: color 0.3s;
     }
     nav a:hover { color: #00aaff; }
+
+    /* ---------- SECTIONS ---------- */
     section {
       max-width: 900px;
       margin: auto;
@@ -72,6 +79,8 @@ header h1, header p, header .button, header img {
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
+
+    /* ---------- CARDS ---------- */
     .card {
       background: #fff;
       padding: 20px;
@@ -84,12 +93,48 @@ header h1, header p, header .button, header img {
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
+
+    /* ---------- PROJECT CARDS ---------- */
+    .project-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .project-card .hover-detail {
+      display: none;
+      color: #555;
+      font-style: italic;
+      margin-top: 5px;
+    }
+    .project-card:hover .hover-detail {
+      display: block;
+    }
+    .project-card .full-detail {
+      display: none;
+      margin-top: 15px;
+      color: #333;
+    }
+    .project-card.active .full-detail {
+      display: block;
+    }
+
+    /* ---------- SKILLS GRID ---------- */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 10px;
       text-align: center;
     }
+
+    /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
       background: #222;
@@ -109,7 +154,9 @@ header h1, header p, header .button, header img {
     a.button:hover { background: #0056b3; }
   </style>
 </head>
+
 <body>
+  <!-- ---------- HEADER ---------- -->
   <header>
     <img src="myphoto.jpg" alt="Pradyoth Goparaju">
     <h1>Pradyoth Goparaju</h1>
@@ -117,6 +164,7 @@ header h1, header p, header .button, header img {
     <a class="button" href="mailto:saipradyothgoparaju@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
   </header>
 
+  <!-- ---------- NAV ---------- -->
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -126,61 +174,128 @@ header h1, header p, header .button, header img {
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ---------- ABOUT ---------- -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi, I’m Pradyoth Goparaju, a Mechanical Engineer passionate about design validation, process optimization, and innovative problem-solving. I’ve worked on projects ranging from aerospace manufacturing to semiconductor packaging, gaining hands-on experience in CAD, simulation tools, and Lean Six Sigma.
-Currently, as a Product & Mechanical Design Intern at Manakin Bio, I’m focused on creating efficient designs and collaborating across teams to bring ideas to life. I enjoy learning new technologies and continuously improving the way things work.</p>
+    <p>
+      Hi, I’m Pradyoth Goparaju, a Mechanical Engineer passionate about design validation, process optimization, 
+      and innovative problem-solving. I’ve worked on projects ranging from aerospace manufacturing to 
+      semiconductor packaging, gaining hands-on experience in CAD, simulation tools, and Lean Six Sigma. 
+      Currently, as a Product & Mechanical Design Intern at Manakin Bio, I’m focused on creating efficient designs 
+      and collaborating across teams to bring ideas to life.
+    </p>
   </section>
 
+  <!-- ---------- EXPERIENCE ---------- -->
   <section id="experience">
     <h2>Experience</h2>
     <div class="card">
       <h3>Product & Mechanical Design Intern – Manakin Bio (May 2025 – Present)</h3>
-      <p>At Manakin Bio, I design cartridge housing components that have accelerated prototyping by 25%. By conducting detailed tolerance analyses, I successfully reduced assembly misfits by 40% and minimized rework costs. 
-        Working closely with optics and electronics teams, I’ve helped cut redesign efforts by 20% while supporting fit checks and developing GD&T drawings to ensure timely prototype delivery.</p>
+      <p>Designed cartridge housing components, accelerating prototyping by 25%. Conducted tolerance analyses that reduced misfits by 40%, and collaborated with optics/electronics teams to cut redesigns by 20%.</p>
     </div>
     <div class="card">
       <h3>Graduate Research Assistant – University of Idaho (2022 – 2024)</h3>
-      <p>During my time as a Graduate Research Assistant, I led thermal packaging validation for semiconductor devices, improving efficiency by 17% using ABAQUS and ANSYS simulations. 
-        I applied DFMEA, SPC, and DOE methodologies to strengthen supplier qualification and enhance cleanroom reliability. My work included implementing corrective actions that reduced process deviations by 28% and improving workstation ergonomics by 22% through Lean assessments. 
-        Additionally, I managed preventive maintenance using Jira workflows, increasing on-time task completion by 18%.</p>
+      <p>Led thermal packaging validation for semiconductor devices using ABAQUS/ANSYS. Applied DFMEA, SPC, DOE methodologies, reducing deviations by 28%. Improved preventive maintenance with Jira workflows, increasing on-time completion by 18%.</p>
     </div>
     <div class="card">
       <h3>Program Management Intern – Tata-Boeing Aerospace Limited (2021)</h3>
-      <p>At Tata-Boeing, I supported Apache AH-64 assembly programs, ensuring 95% on-time delivery through effective scheduling and process control. My Lean-based workflow optimizations boosted throughput by 12%, while supplier performance analyses helped reduce delays by 10% and improved cost efficiency. 
-        I also contributed to DFMEA and PFMEA development, enhancing supply chain resilience and overall process reliability.</p>
+      <p>Supported Apache AH-64 assembly programs, ensuring 95% on-time delivery. Improved throughput by 12% using Lean workflows and contributed to DFMEA/PFMEA for compliance and reliability.</p>
     </div>
   </section>
 
+  <!-- ---------- PROJECTS ---------- -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="card"><strong>Electrolytic Hydrogen Fuel Cell Vehicle:</strong> Optimized PEM fuel cell, improved efficiency by 15%.</div>
-    <div class="card"><strong>Six Sigma Check-Out Process Optimization:</strong> Reduced checkout time by 65%, errors by 30%.</div>
-    <div class="card"><strong>Forecasting & Inventory Simulation:</strong> Improved demand forecasting accuracy by 22% with Monte Carlo simulations.</div>
-    <div class="card"><strong>Facility Layout Optimization:</strong> Reduced costs by 8% and enhanced ergonomics by 21%.</div>
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Electrolytic Hydrogen Fuel Cell Vehicle</h3>
+      <p class="brief">Optimized PEM fuel cell, improved efficiency by 15%.</p>
+      <p class="hover-detail">CFD simulations optimized hydrogen flow & durability.</p>
+      <div class="full-detail">
+        <p>
+          Developed and optimized a Proton Exchange Membrane (PEM) hydrogen fuel cell vehicle system. 
+          Using ANSYS Fluent & MATLAB, I modeled hydrogen flow and stack durability, achieving a 
+          <strong>15% efficiency increase</strong> and <strong>20% better stability</strong>. 
+          Highlights skills in <strong>CFD, FEA, sustainable design</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Six Sigma Check-Out Process Optimization</h3>
+      <p class="brief">Reduced checkout time by 65%, errors by 30%.</p>
+      <p class="hover-detail">Applied DMAIC to improve library workflows.</p>
+      <div class="full-detail">
+        <p>
+          Led a Six Sigma Green Belt project improving checkout at University of Idaho Library. 
+          Applied DMAIC, Fishbone, and hypothesis testing. Results: 
+          <strong>65% faster checkouts</strong> and <strong>30% fewer errors</strong>. 
+          Skills: <strong>Lean Six Sigma, SPC, workflow optimization</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Forecasting & Inventory Simulation</h3>
+      <p class="brief">Improved forecast accuracy by 22%.</p>
+      <p class="hover-detail">Monte Carlo simulation on BOM-driven models.</p>
+      <div class="full-detail">
+        <p>
+          Built inventory forecasting using Monte Carlo simulations in Python/Excel VBA. 
+          Improved forecast accuracy by 22% and reduced variability by 17%. 
+          Skills: <strong>Data analytics, stochastic modeling, supply chain optimization</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Facility Layout Optimization</h3>
+      <p class="brief">Reduced costs by 8% and improved ergonomics by 21%.</p>
+      <p class="hover-detail">Redesigned layouts with AutoCAD & Revit.</p>
+      <div class="full-detail">
+        <p>
+          Modeled facility layouts during Tata-Boeing internship using AutoCAD/Revit. 
+          Reduced handling distances by 15%, production costs by 8%, and improved ergonomics by 21%. 
+          Skills: <strong>Lean manufacturing, ergonomics, CAD layout design</strong>.
+        </p>
+      </div>
+    </div>
   </section>
 
+  <!-- ---------- SKILLS ---------- -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-grid">
-      <div>SolidWorks</div><div>AutoCAD</div><div>CATIA</div><div>ABAQUS</div><div>ANSYS</div><div>CFD</div><div>Lean Six Sigma</div><div>Python</div><div>Power BI</div><div>Excel VBA</div><div>Jira</div><div>MS Project</div>
+      <div>SolidWorks</div><div>AutoCAD</div><div>CATIA</div><div>ABAQUS</div><div>ANSYS</div>
+      <div>CFD</div><div>Lean Six Sigma</div><div>Python</div><div>Power BI</div>
+      <div>Excel VBA</div><div>Jira</div><div>MS Project</div>
     </div>
   </section>
 
+  <!-- ---------- EDUCATION ---------- -->
   <section id="education">
     <h2>Education</h2>
     <div class="card">ME in Mechanical Engineering – University of Idaho (2022–2024)</div>
     <div class="card">BS in Aeronautical Engineering – JNTU Hyderabad (2017–2021)</div>
   </section>
 
+  <!-- ---------- CONTACT ---------- -->
   <section id="contact">
     <h2>Contact</h2>
     <p><i class="fas fa-envelope"></i> <a href="mailto:saipradyothgoparaju@gmail.com">saipradyothgoparaju@gmail.com</a></p>
     <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sai-pradyoth-goparaju-474bbb167" target="_blank">View Profile</a></p>
   </section>
 
+  <!-- ---------- FOOTER ---------- -->
   <footer>
     <p>&copy; 2025 Pradyoth Goparaju. All rights reserved.</p>
   </footer>
+
+  <!-- ---------- JS ---------- -->
+  <script>
+    function toggleDetails(card) {
+      card.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
