@@ -6,28 +6,39 @@
   <title>Sai Pradyoth Goparaju | Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
   <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #1e40af;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+    }
+
     body {
       font-family: "Inter", sans-serif;
-      background: #0f172a;
-      color: #f1f5f9;
       margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     header {
-      min-height: 90vh;
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
       text-align: center;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
       padding: 2rem;
     }
     header img {
@@ -35,39 +46,33 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.2);
       margin-bottom: 1rem;
     }
-    header h1 {
-      font-size: 2rem;
-      margin: 0.5rem 0;
-    }
-    .header-subtitle {
-      color: #94a3b8;
-      margin-bottom: 1.5rem;
-    }
+    header h1 { margin: 0.5rem 0; }
+    .header-subtitle { color: var(--text-light); }
 
     nav {
       position: sticky;
       top: 0;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(8px);
+      padding: 0.8rem;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 1rem;
-      padding: 0.8rem;
       z-index: 100;
     }
     nav a {
-      color: #94a3b8;
+      color: var(--text-light);
       text-decoration: none;
       font-weight: 500;
     }
-    nav a:hover {
-      color: #fff;
-    }
+    nav a:hover { color: var(--text); }
 
     section {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       padding: 3rem 1rem;
     }
@@ -75,41 +80,74 @@
       text-align: center;
       margin-bottom: 2rem;
     }
-
     .card {
-      background: #1e293b;
-      padding: 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.2rem;
       border-radius: 10px;
       margin-bottom: 1rem;
-      border: 1px solid #334155;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .card a {
-      color: #f1f5f9;
+    .card:hover { border-color: var(--primary); }
+    .card h3 { margin-top: 0; }
+
+    /* Project expansion */
+    .project-details {
+      display: none;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .card.active .project-details { display: block; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 6px;
       text-decoration: none;
     }
-    .card a:hover {
-      color: #3b82f6;
+    .btn:hover { background: var(--primary-dark); }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .skill-category {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-item {
+      background: #1e293b;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      color: var(--text-light);
     }
 
     /* PDF Viewer */
     embed {
       width: 100%;
-      height: 90vh;   /* take almost full viewport height */
+      height: 85vh;
       border-radius: 10px;
-      border: 1px solid #334155;
+      border: 1px solid var(--border);
       background: white;
     }
 
     /* Swiper */
-    .swiper {
-      width: 100%;
-      padding-bottom: 2rem;
-    }
+    .swiper { width: 100%; padding-bottom: 2rem; }
     .swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #1e293b;
+      background: var(--card);
       border-radius: 10px;
       padding: 1rem;
     }
@@ -118,12 +156,12 @@
       text-align: center;
       padding: 1.5rem;
       background: #020617;
-      color: #94a3b8;
+      color: var(--text-light);
     }
 
     @media (max-width: 768px) {
       header h1 { font-size: 1.6rem; }
-      embed { height: 70vh; } /* reduce height on mobile */
+      embed { height: 70vh; }
     }
   </style>
 </head>
@@ -146,6 +184,91 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header"><h2>About Me</h2></div>
+    <div class="card">
+      <p>I am a Mechanical Engineer with expertise in CAD/CAE, PCB validation, Six Sigma optimization, and sustainable energy solutions. I specialize in transforming engineering concepts into manufacturable, reliable, and efficient solutions across aerospace, semiconductors, and biotech hardware.</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header"><h2>Experience</h2></div>
+    <div class="card"><h3>Product & Mechanical Designer – Manakin Bio (2025–Present)</h3></div>
+    <div class="card"><h3>Graduate Research Assistant – University of Idaho (2022–2024)</h3></div>
+    <div class="card"><h3>Program Management Intern – Tata-Boeing Aerospace (2021)</h3></div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header"><h2>Projects</h2></div>
+
+    <div class="card" onclick="toggleProject(this)">
+      <h3>Hydrogen Fuel Cell Vehicle</h3>
+      <p><b>Result:</b> +15% efficiency</p>
+      <div class="project-details">
+        <ul>
+          <li>Optimized PEM fuel cell design via ANSYS & MATLAB</li>
+          <li>Improved stack stability by 20%</li>
+          <li>Validated through CFD simulations</li>
+        </ul>
+        <a href="Optimization of decentralized biomass preprocessing for sustainable bioenergy production.pdf" target="_blank" class="btn">View Full Report</a>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleProject(this)">
+      <h3>Six Sigma Process Optimization</h3>
+      <p><b>Result:</b> Checkout time ↓65%, errors ↓30%</p>
+      <div class="project-details">
+        <ul>
+          <li>DMAIC applied to university library checkout</li>
+          <li>Cut average time from 9 min → 3 min</li>
+          <li>Validated by statistical hypothesis testing</li>
+        </ul>
+        <a href="Six Sigma term paper.pdf" target="_blank" class="btn">View Full Report</a>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleProject(this)">
+      <h3>Predictive Inventory Simulation</h3>
+      <p><b>Result:</b> Forecast accuracy +22%</p>
+      <div class="project-details">
+        <ul>
+          <li>Monte Carlo simulation in Python & Excel VBA</li>
+          <li>Reduced inventory swings by 17%</li>
+          <li>Enabled BOM-driven forecasts</li>
+        </ul>
+        <a href="Baldridge Report PDF - Blake & Sai.pdf" target="_blank" class="btn">View Full Report</a>
+      </div>
+    </div>
+
+    <div class="card" onclick="toggleProject(this)">
+      <h3>Semiconductors Thermal Stress Analysis</h3>
+      <p><b>Result:</b> Reliability ↑17%</p>
+      <div class="project-details">
+        <ul>
+          <li>Modeled packaging thermal stress in ABAQUS/ANSYS</li>
+          <li>Reduced deviations by 28% using DFMEA/DOE</li>
+          <li>Improved cleanroom reliability</li>
+        </ul>
+        <a href="Semiconductors Thermal Stress Analysis - Sai Pradyoth Goparaju.pdf" target="_blank" class="btn">View Full Report</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header"><h2>Skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-category"><h4>CAD/CAE</h4><div class="skill-list"><span class="skill-item">SolidWorks</span><span class="skill-item">CATIA</span><span class="skill-item">NX Siemens</span><span class="skill-item">AutoCAD</span><span class="skill-item">Fusion 360</span></div></div>
+      <div class="skill-category"><h4>Simulation</h4><div class="skill-list"><span class="skill-item">ABAQUS</span><span class="skill-item">ANSYS</span><span class="skill-item">CFD</span><span class="skill-item">Thermal/Fatigue Analysis</span></div></div>
+      <div class="skill-category"><h4>Process</h4><div class="skill-list"><span class="skill-item">Lean Six Sigma</span><span class="skill-item">DFMEA/PFMEA</span><span class="skill-item">DOE</span><span class="skill-item">Kaizen</span></div></div>
+      <div class="skill-category"><h4>Data & Analytics</h4><div class="skill-list"><span class="skill-item">Python</span><span class="skill-item">Power BI</span><span class="skill-item">Excel VBA</span><span class="skill-item">Monte Carlo Simulation</span></div></div>
+      <div class="skill-category"><h4>Project Tools</h4><div class="skill-list"><span class="skill-item">Jira</span><span class="skill-item">MS Project</span></div></div>
+    </div>
+  </section>
+
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-header"><h2>Certifications</h2></div>
@@ -153,15 +276,31 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide"><embed src="ISRO - Satellite Photogrammetry and its Application.pdf" type="application/pdf"></div>
         <div class="swiper-slide"><embed src="Lean - Six Sigma Black Belt.pdf" type="application/pdf"></div>
-        <div class="swiper-slide"><embed src="Basics_of_Plastics_Design.pdf" type="application/pdf"></div>
-        <div class="swiper-slide"><embed src="Business_Analysis_Process_Management.pdf" type="application/pdf"></div>
-        <div class="swiper-slide"><embed src="Diploma_in_Mechatronics.pdf" type="application/pdf"></div>
+        <div class="swiper-slide"><embed src="Basics of Plastics design for design engineers.pdf" type="application/pdf"></div>
+        <div class="swiper-slide"><embed src="Business Analysis & Process Management certificate.pdf" type="application/pdf"></div>
+        <div class="swiper-slide"><embed src="Diploma in Mechatronics certificate.pdf" type="application/pdf"></div>
         <div class="swiper-slide"><embed src="DRDL.pdf" type="application/pdf"></div>
-        <div class="swiper-slide"><embed src="ISO_9001_2015_Quality_Management.pdf" type="application/pdf"></div>
+        <div class="swiper-slide"><embed src="ISO 9001_2015 Quality Management.pdf" type="application/pdf"></div>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-header"><h2>Education</h2></div>
+    <div class="card">M.E. in Mechanical Engineering – University of Idaho (2022–2024)</div>
+    <div class="card">B.S. in Aeronautical Engineering – JNTU Hyderabad (2017–2021)</div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header"><h2>Contact</h2></div>
+    <div class="card">
+      <p><i class="fas fa-envelope"></i> <a href="mailto:saipradyothgoparaju@gmail.com">saipradyothgoparaju@gmail.com</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sai-pradyoth-goparaju-474bbb167">LinkedIn</a></p>
     </div>
   </section>
 
@@ -178,6 +317,10 @@
       pagination: { el: ".swiper-pagination", clickable: true },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
     });
+
+    function toggleProject(card) {
+      card.classList.toggle("active");
+    }
   </script>
 </body>
 </html>
