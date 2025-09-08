@@ -44,15 +44,15 @@
       padding: 2rem;
     }
     header img {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid rgba(255, 255, 255, 0.3);
       margin-bottom: 1rem;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin: 0.5rem 0;
     }
     .header-subtitle {
@@ -87,7 +87,8 @@
       z-index: 100;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
     nav a {
       color: var(--text-light);
@@ -102,38 +103,46 @@
     section {
       max-width: 1200px;
       margin: auto;
-      padding: 4rem 1.5rem;
+      padding: 3rem 1rem;
     }
     .section-header {
       text-align: center;
       margin-bottom: 2rem;
     }
     .section-header h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     /* CARDS */
     .card {
       background: var(--bg-card);
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 12px;
       margin-bottom: 1rem;
       border: 1px solid var(--border-color);
+    }
+    .card a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card a:hover {
+      color: var(--primary-color);
     }
 
     /* SKILLS */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
     }
     .skill-category {
       background: var(--bg-card);
-      padding: 1.2rem;
+      padding: 1rem;
       border-radius: 10px;
     }
     .skill-category h4 {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       color: white;
     }
     .skill-list {
@@ -143,39 +152,54 @@
     }
     .skill-item {
       background: #1e293b;
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
       color: var(--text-light);
     }
 
-    /* CERTIFICATIONS (Swiper) */
+    /* PDF Viewer */
+    iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: white;
+    }
+
+    /* SWIPER */
     .swiper {
       width: 100%;
-      height: 650px;
+      padding-bottom: 2rem;
     }
     .swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
       background: var(--bg-card);
-      border-radius: 12px;
-      padding: 1rem;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
       border-radius: 10px;
-      border: 1px solid var(--border-color);
-      background: white;
+      padding: 1rem;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       background: #020617;
       color: var(--text-light);
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+      iframe {
+        height: 400px;
+      }
     }
   </style>
 </head>
@@ -210,18 +234,18 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-header"><h2>Experience</h2></div>
-    <div class="card"><h3>Product & Mechanical Designer – Manakin Bio (2025–Present)</h3><ul><li>Reduced prototyping cycle time by 25%</li><li>Cut assembly misfits by 40% via GD&T</li><li>Reduced redesign efforts by 20%</li></ul></div>
-    <div class="card"><h3>Graduate Research Assistant – University of Idaho (2022–2024)</h3><ul><li>Modeled semiconductor thermal stress → +17% reliability</li><li>Applied DFMEA, DOE, SPC → -28% deviations</li><li>Automated Power BI dashboards</li></ul></div>
-    <div class="card"><h3>Program Management Intern – Tata-Boeing Aerospace (2021)</h3><ul><li>95% on-time delivery for Apache fuselage</li><li>Boosted throughput by 12% via Lean workflow</li></ul></div>
+    <div class="card"><h3>Product & Mechanical Designer – Manakin Bio (2025–Present)</h3></div>
+    <div class="card"><h3>Graduate Research Assistant – University of Idaho (2022–2024)</h3></div>
+    <div class="card"><h3>Program Management Intern – Tata-Boeing Aerospace (2021)</h3></div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-header"><h2>Projects</h2></div>
-    <div class="card"><b>Hydrogen Fuel Cell Vehicle:</b> Optimized PEM cell, +15% efficiency</div>
-    <div class="card"><b>Six Sigma Process Optimization:</b> Reduced checkout time by 65%, errors by 30%</div>
-    <div class="card"><b>Predictive Inventory Simulation:</b> Improved forecast accuracy by 22% with Monte Carlo</div>
-    <div class="card"><b>Facility Layout Optimization:</b> Reduced costs by 8%, ergonomics +21%</div>
+    <div class="card"><a href="Optimization of decentralized biomass preprocessing for sustainable bioenergy production.pdf" target="_blank"><b>Hydrogen Fuel Cell Vehicle:</b> Optimized PEM cell, +15% efficiency</a></div>
+    <div class="card"><a href="Six Sigma term paper.pdf" target="_blank"><b>Six Sigma Process Optimization:</b> Reduced checkout time by 65%, errors by 30%</a></div>
+    <div class="card"><a href="Baldridge Report PDF - Blake & Sai.pdf" target="_blank"><b>Predictive Inventory Simulation:</b> Improved forecast accuracy by 22% with Monte Carlo</a></div>
+    <div class="card"><a href="Semiconductors Thermal Stress Analysis - Sai Pradyoth Goparaju.pdf" target="_blank"><b>Semiconductors Thermal Stress Analysis:</b> Improved reliability by 17%</a></div>
   </section>
 
   <!-- SKILLS -->
@@ -233,7 +257,6 @@
       <div class="skill-category"><h4>Process</h4><div class="skill-list"><span class="skill-item">Lean Six Sigma</span><span class="skill-item">DFMEA/PFMEA</span><span class="skill-item">DOE</span><span class="skill-item">Kaizen</span></div></div>
       <div class="skill-category"><h4>Data & Analytics</h4><div class="skill-list"><span class="skill-item">Python</span><span class="skill-item">Power BI</span><span class="skill-item">Excel VBA</span><span class="skill-item">Monte Carlo Simulation</span></div></div>
       <div class="skill-category"><h4>Project Tools</h4><div class="skill-list"><span class="skill-item">Jira</span><span class="skill-item">MS Project</span></div></div>
-      <div class="skill-category"><h4>Electronics & Validation</h4><div class="skill-list"><span class="skill-item">PCB Design (OrCAD)</span><span class="skill-item">Prototype Testing</span></div></div>
     </div>
   </section>
 
@@ -242,13 +265,13 @@
     <div class="section-header"><h2>Certifications</h2></div>
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><iframe src="Certificates/ISRO_Satellite_Photogrammetry.pdf"></iframe></div>
-        <div class="swiper-slide"><iframe src="Certificates/Lean_Six_Sigma_Black_Belt.pdf"></iframe></div>
-        <div class="swiper-slide"><iframe src="Certificates/Basics_of_Plastics_Design.pdf"></iframe></div>
-        <div class="swiper-slide"><iframe src="Certificates/Business_Analysis_Process_Management.pdf"></iframe></div>
-        <div class="swiper-slide"><iframe src="Certificates/Diploma_in_Mechatronics.pdf"></iframe></div>
-        <div class="swiper-slide"><iframe src="Certificates/DRDL.pdf"></iframe></div>
-        <div class="swiper-slide"><iframe src="Certificates/ISO_9001_2015_Quality_Management.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="ISRO - Satellite Photogrammetry and its Application.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Lean - Six Sigma Black Belt.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Basics_of_Plastics_Design.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Business_Analysis_Process_Management.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Diploma_in_Mechatronics.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="DRDL.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="ISO_9001_2015_Quality_Management.pdf"></iframe></div>
       </div>
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
