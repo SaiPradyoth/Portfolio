@@ -1,287 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sai Pradyoth Goparaju | Mechanical Engineer & Product Designer</title>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Mechanical Engineer specializing in CAD/CAE, PCB validation, Six Sigma optimization, and sustainable energy solutions.">
-  <meta name="keywords" content="Mechanical Engineer, Product Design, Six Sigma, CAD, CAE, PCB Design">
-  <meta name="author" content="Sai Pradyoth Goparaju">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Pradyoth Goparaju | Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
   <style>
     :root {
       --primary-color: #3b82f6;
       --primary-dark: #1e40af;
-      --secondary-color: #94a3b8;
       --accent-color: #06b6d4;
       --text-dark: #f1f5f9;
       --text-light: #94a3b8;
       --bg-dark: #0f172a;
       --bg-card: #1e293b;
       --border-color: #334155;
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: var(--text-dark);
+      font-family: "Inter", sans-serif;
       background: var(--bg-dark);
+      color: var(--text-dark);
+      margin: 0;
+      line-height: 1.6;
     }
 
     /* HEADER */
     header {
       min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-      color: white;
-      position: relative;
+      padding: 2rem;
     }
-    .header-content { max-width: 800px; padding: 2rem; }
-    .profile-image {
-      width: 180px; height: 180px;
+    header img {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 6px solid rgba(255,255,255,0.2);
-      margin: 0 auto 2rem;
-      display: block;
-      box-shadow: var(--shadow-lg);
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 1rem;
     }
-    header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
-    .header-subtitle { font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-light); }
-    .btn { padding: 0.75rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 500; transition: 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
-    .btn-primary { background: var(--primary-color); color: white; }
-    .btn-primary:hover { background: var(--primary-dark); }
-    .btn-secondary { background: var(--bg-card); color: var(--text-dark); border: 1px solid var(--primary-color); }
-    .btn-secondary:hover { background: var(--primary-color); color: white; }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+    }
+    .header-subtitle {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+    .btn {
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: 0.3s;
+    }
+    .btn-primary {
+      background: var(--primary-color);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
 
     /* NAV */
-    nav { position: sticky; top: 0; background: #0f172aee; backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-color); padding: 1rem 0; z-index: 100; }
-    .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-    nav a { color: var(--text-light); text-decoration: none; padding: 0.5rem 1rem; border-radius: 25px; transition: 0.3s; }
-    nav a:hover, nav a.active { background: rgba(59,130,246,0.2); color: white; }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #0f172acc;
+      backdrop-filter: blur(8px);
+      padding: 0.8rem;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: white;
+    }
 
     /* SECTIONS */
-    section { max-width: 1200px; margin: auto; padding: 4rem 2rem; }
-    .section-header { text-align: center; margin-bottom: 3rem; }
-    .section-header h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-    .section-header p { color: var(--text-light); }
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-header h2 {
+      font-size: 2rem;
+    }
 
     /* CARDS */
-    .card { background: var(--bg-card); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
-
-    /* EXPERIENCE TIMELINE */
-    .timeline { border-left: 2px solid var(--primary-color); margin-left: 1rem; padding-left: 2rem; }
-    .timeline-item { margin-bottom: 2rem; }
-    .timeline-item h3 { margin-bottom: 0.5rem; }
-
-    /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .project-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; cursor: pointer; transition: 0.3s; }
-    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-    .project-card-header { padding: 1.5rem; background: linear-gradient(135deg, #3b82f6, #06b6d4); color: white; }
-    .project-card-body { padding: 1.5rem; }
-    .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
-    .tag { background: rgba(59,130,246,0.15); color: var(--primary-color); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.8rem; }
-    .full-detail { display: none; margin-top: 1rem; color: var(--text-light); }
-    .project-card.active .full-detail { display: block; }
+    .card {
+      background: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border-color);
+    }
 
     /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .skill-category { background: var(--bg-card); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border-color); }
-    .skill-category h4 { margin-bottom: 1rem; color: white; }
-    .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-item { background: #1e293b; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: var(--text-light); }
-    .skill-item:hover { background: var(--primary-color); color: white; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .skill-category {
+      background: var(--bg-card);
+      padding: 1.2rem;
+      border-radius: 10px;
+    }
+    .skill-category h4 {
+      margin-bottom: 1rem;
+      color: white;
+    }
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-item {
+      background: #1e293b;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
 
-    /* CERTIFICATIONS */
-    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .cert-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; }
+    /* CERTIFICATIONS (Swiper) */
+    .swiper {
+      width: 100%;
+      height: 650px;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      background: white;
+    }
 
     /* FOOTER */
-    footer { background: #020617; color: var(--text-light); text-align: center; padding: 2rem; margin-top: 3rem; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #020617;
+      color: var(--text-light);
+    }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
   <header>
-    <div class="header-content">
-      <img src="myphoto.jpg" alt="Sai Pradyoth Goparaju" class="profile-image">
-      <h1>Sai Pradyoth Goparaju</h1>
-      <p class="header-subtitle">Mechanical Engineer | Product Designer | Lean Six Sigma Black Belt</p>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get In Touch</a>
-        <a href="#projects" class="btn btn-secondary"><i class="fas fa-rocket"></i> View Projects</a>
-      </div>
-    </div>
+    <img src="myphoto.jpg" alt="Sai Pradyoth Goparaju" />
+    <h1>Sai Pradyoth Goparaju</h1>
+    <p class="header-subtitle">Mechanical Engineer | Product Designer | Lean Six Sigma Black Belt</p>
+    <a href="mailto:saipradyothgoparaju@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Me</a>
   </header>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav>
-    <div class="nav-container">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="section-header">
-      <h2>About Me</h2>
-      <p>Transforming engineering concepts into manufacturable, reliable, and efficient solutions</p>
-    </div>
+    <div class="section-header"><h2>About Me</h2></div>
     <div class="card">
-      <h3>Professional Summary</h3>
       <p>I am a Mechanical Engineer with expertise in CAD/CAE, PCB validation, Six Sigma optimization, and sustainable energy solutions. I specialize in transforming engineering concepts into manufacturable, reliable, and efficient solutions across aerospace, semiconductors, and biotech hardware.</p>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="section-header"><h2>Professional Experience</h2></div>
-    <div class="timeline">
-      <div class="timeline-item"><div class="card"><h3>Product & Mechanical Designer – Manakin Bio (2025–Present)</h3><ul><li>Reduced prototyping cycle time by 25%</li><li>Cut assembly misfits by 40% via GD&T</li><li>Reduced redesign efforts by 20%</li></ul></div></div>
-      <div class="timeline-item"><div class="card"><h3>Graduate Research Assistant – University of Idaho (2022–2024)</h3><ul><li>Modeled semiconductor thermal stress with ABAQUS/ANSYS → +17% reliability</li><li>Applied DFMEA, DOE, SPC → -28% process deviations</li><li>Automated Power BI dashboards</li></ul></div></div>
-      <div class="timeline-item"><div class="card"><h3>Program Management Intern – Tata-Boeing Aerospace (2021)</h3><ul><li>95% on-time delivery for Apache fuselage</li><li>Boosted throughput by 12% via Lean workflow</li></ul></div></div>
-      <div class="timeline-item"><div class="card"><h3>Industrial Engineering Intern – Tata-Boeing Aerospace (2021)</h3><ul><li>Optimized layouts → -15% handling distance</li><li>Improved equipment uptime by 15%</li></ul></div></div>
-      <div class="timeline-item"><div class="card"><h3>Undergraduate Research Assistant – IARE (2019–2021)</h3><ul><li>Designed & simulated aero-disk models in CATIA/ANSYS</li><li>Reduced thermal stress & improved aerodynamic efficiency</li></ul></div></div>
-    </div>
+    <div class="section-header"><h2>Experience</h2></div>
+    <div class="card"><h3>Product & Mechanical Designer – Manakin Bio (2025–Present)</h3><ul><li>Reduced prototyping cycle time by 25%</li><li>Cut assembly misfits by 40% via GD&T</li><li>Reduced redesign efforts by 20%</li></ul></div>
+    <div class="card"><h3>Graduate Research Assistant – University of Idaho (2022–2024)</h3><ul><li>Modeled semiconductor thermal stress → +17% reliability</li><li>Applied DFMEA, DOE, SPC → -28% deviations</li><li>Automated Power BI dashboards</li></ul></div>
+    <div class="card"><h3>Program Management Intern – Tata-Boeing Aerospace (2021)</h3><ul><li>95% on-time delivery for Apache fuselage</li><li>Boosted throughput by 12% via Lean workflow</li></ul></div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-header"><h2>Featured Projects</h2></div>
-    <div class="projects-grid">
-      <div class="project-card" onclick="this.classList.toggle('active')"><div class="project-card-header"><h3>Hydrogen Fuel Cell Vehicle</h3></div><div class="project-card-body"><p>Optimized PEM cell → +15% efficiency</p><div class="project-tags"><span class="tag">ANSYS</span><span class="tag">MATLAB</span></div><div class="full-detail"><p>Developed PEM hydrogen fuel cell model with CFD, improving efficiency and stability.</p></div></div></div>
-      <div class="project-card" onclick="this.classList.toggle('active')"><div class="project-card-header"><h3>Six Sigma Process Optimization</h3></div><div class="project-card-body"><p>Reduced checkout time by 65%</p><div class="project-tags"><span class="tag">DMAIC</span><span class="tag">Lean</span></div><div class="full-detail"><p>Applied Six Sigma DMAIC to library checkout process, reducing errors by 30%.</p></div></div></div>
-      <div class="project-card" onclick="this.classList.toggle('active')"><div class="project-card-header"><h3>Predictive Inventory Simulation</h3></div><div class="project-card-body"><p>Forecast accuracy ↑22%</p><div class="project-tags"><span class="tag">Python</span><span class="tag">Monte Carlo</span></div><div class="full-detail"><p>Developed Monte Carlo inventory simulation improving forecast and reducing variability.</p></div></div></div>
-      <div class="project-card" onclick="this.classList.toggle('active')"><div class="project-card-header"><h3>Facility Layout Optimization</h3></div><div class="project-card-body"><p>Reduced costs by 8%</p><div class="project-tags"><span class="tag">AutoCAD</span><span class="tag">Revit</span></div><div class="full-detail"><p>Optimized assembly layouts, improving ergonomics and cutting production costs.</p></div></div></div>
-    </div>
+    <div class="section-header"><h2>Projects</h2></div>
+    <div class="card"><b>Hydrogen Fuel Cell Vehicle:</b> Optimized PEM cell, +15% efficiency</div>
+    <div class="card"><b>Six Sigma Process Optimization:</b> Reduced checkout time by 65%, errors by 30%</div>
+    <div class="card"><b>Predictive Inventory Simulation:</b> Improved forecast accuracy by 22% with Monte Carlo</div>
+    <div class="card"><b>Facility Layout Optimization:</b> Reduced costs by 8%, ergonomics +21%</div>
   </section>
 
   <!-- SKILLS -->
-<section id="skills">
-  <div class="section-header"><h2>Skills</h2></div>
-  <div class="skills-grid">
-    <div class="skill-category">
-      <h4>CAD/CAE</h4>
-      <div class="skill-list">
-        <span class="skill-item">SolidWorks</span>
-        <span class="skill-item">CATIA</span>
-        <span class="skill-item">NX Siemens</span>
-        <span class="skill-item">AutoCAD</span>
-        <span class="skill-item">Fusion 360</span>
-      </div>
+  <section id="skills">
+    <div class="section-header"><h2>Skills</h2></div>
+    <div class="skills-grid">
+      <div class="skill-category"><h4>CAD/CAE</h4><div class="skill-list"><span class="skill-item">SolidWorks</span><span class="skill-item">CATIA</span><span class="skill-item">NX Siemens</span><span class="skill-item">AutoCAD</span><span class="skill-item">Fusion 360</span></div></div>
+      <div class="skill-category"><h4>Simulation</h4><div class="skill-list"><span class="skill-item">ABAQUS</span><span class="skill-item">ANSYS</span><span class="skill-item">CFD</span><span class="skill-item">Thermal/Fatigue Analysis</span></div></div>
+      <div class="skill-category"><h4>Process</h4><div class="skill-list"><span class="skill-item">Lean Six Sigma</span><span class="skill-item">DFMEA/PFMEA</span><span class="skill-item">DOE</span><span class="skill-item">Kaizen</span></div></div>
+      <div class="skill-category"><h4>Data & Analytics</h4><div class="skill-list"><span class="skill-item">Python</span><span class="skill-item">Power BI</span><span class="skill-item">Excel VBA</span><span class="skill-item">Monte Carlo Simulation</span></div></div>
+      <div class="skill-category"><h4>Project Tools</h4><div class="skill-list"><span class="skill-item">Jira</span><span class="skill-item">MS Project</span></div></div>
+      <div class="skill-category"><h4>Electronics & Validation</h4><div class="skill-list"><span class="skill-item">PCB Design (OrCAD)</span><span class="skill-item">Prototype Testing</span></div></div>
     </div>
-    <div class="skill-category">
-      <h4>Simulation</h4>
-      <div class="skill-list">
-        <span class="skill-item">ABAQUS</span>
-        <span class="skill-item">ANSYS</span>
-        <span class="skill-item">CFD</span>
-        <span class="skill-item">Thermal/Fatigue Analysis</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h4>Process Improvement</h4>
-      <div class="skill-list">
-        <span class="skill-item">Lean Six Sigma (Black Belt)</span>
-        <span class="skill-item">DFMEA / PFMEA</span>
-        <span class="skill-item">SPC</span>
-        <span class="skill-item">DOE</span>
-        <span class="skill-item">Kaizen</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h4>Data & Analytics</h4>
-      <div class="skill-list">
-        <span class="skill-item">Python</span>
-        <span class="skill-item">Power BI</span>
-        <span class="skill-item">Excel VBA</span>
-        <span class="skill-item">Monte Carlo Simulation</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h4>Project Tools</h4>
-      <div class="skill-list">
-        <span class="skill-item">Jira</span>
-        <span class="skill-item">Confluence</span>
-        <span class="skill-item">MS Project</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <h4>Electronics & Validation</h4>
-      <div class="skill-list">
-        <span class="skill-item">PCB Design (OrCAD)</span>
-        <span class="skill-item">DFM/DFT</span>
-        <span class="skill-item">Prototype Testing</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="section-header"><h2>Certifications</h2></div>
-  <div class="cert-grid">
-    <div class="cert-card" onclick="showCertificate('cert1')">ISRO – Satellite Photogrammetry:contentReference[oaicite:0]{index=0}</div>
-    <div class="cert-card" onclick="showCertificate('cert2')">Six Sigma Black Belt:contentReference[oaicite:1]{index=1}</div>
-    <div class="cert-card" onclick="showCertificate('cert3')">Basics of Plastics Design:contentReference[oaicite:2]{index=2}</div>
-    <div class="cert-card" onclick="showCertificate('cert4')">Business Analysis & Process Mgmt:contentReference[oaicite:3]{index=3}</div>
-    <div class="cert-card" onclick="showCertificate('cert5')">Diploma in Mechatronics:contentReference[oaicite:4]{index=4}</div>
-    <div class="cert-card" onclick="showCertificate('cert6')">DRDL Internship:contentReference[oaicite:5]{index=5}</div>
-    <div class="cert-card" onclick="showCertificate('cert7')">ISO 9001:2015 Quality Mgmt:contentReference[oaicite:6]{index=6}</div>
-  </div>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-header"><h2>Certifications</h2></div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><iframe src="Certificates/ISRO_Satellite_Photogrammetry.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Certificates/Lean_Six_Sigma_Black_Belt.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Certificates/Basics_of_Plastics_Design.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Certificates/Business_Analysis_Process_Management.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Certificates/Diploma_in_Mechatronics.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Certificates/DRDL.pdf"></iframe></div>
+        <div class="swiper-slide"><iframe src="Certificates/ISO_9001_2015_Quality_Management.pdf"></iframe></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
 
-  <!-- Embedded Viewer -->
-  <div id="certificate-viewer" style="margin-top:2rem; display:none;">
-    <iframe id="certFrame" src="" width="100%" height="600px" style="border:1px solid var(--border-color); border-radius:12px;"></iframe>
-  </div>
-</section>
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-header"><h2>Education</h2></div>
+    <div class="card">M.E. in Mechanical Engineering – University of Idaho (2022–2024)</div>
+    <div class="card">B.S. in Aeronautical Engineering – JNTU Hyderabad (2017–2021)</div>
+  </section>
 
-<script>
-  function showCertificate(certId) {
-    const viewer = document.getElementById("certificate-viewer");
-    const frame = document.getElementById("certFrame");
-    viewer.style.display = "block";
-
-    switch(certId) {
-      case 'cert1': frame.src = "ISRO - Satellite Photogrammetry and its Application.pdf"; break;
-      case 'cert2': frame.src = "Lean - Six Sigma Black Belt.pdf"; break;
-      case 'cert3': frame.src = "Basics of Plastics design for design engineers.pdf"; break;
-      case 'cert4': frame.src = "Business Analysis & Process Management certificate.pdf"; break;
-      case 'cert5': frame.src = "Diploma in Mechatronics certificate.pdf"; break;
-      case 'cert6': frame.src = "DRDL.pdf"; break;
-      case 'cert7': frame.src = "ISO 9001_2015 Quality Management.pdf"; break;
-    }
-  }
-</script>
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-header"><h2>Contact</h2></div>
-    <div class="card"><p><i class="fas fa-envelope"></i> <a href="mailto:saipradyothgoparaju@gmail.com">saipradyothgoparaju@gmail.com</a></p><p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sai-pradyoth-goparaju-474bbb167">LinkedIn Profile</a></p></div>
+    <div class="card"><p><i class="fas fa-envelope"></i> <a href="mailto:saipradyothgoparaju@gmail.com">saipradyothgoparaju@gmail.com</a></p><p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sai-pradyoth-goparaju-474bbb167">LinkedIn</a></p></div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Sai Pradyoth Goparaju. All rights reserved.</p>
-  </footer>
+  <footer><p>&copy; 2025 Sai Pradyoth Goparaju. All rights reserved.</p></footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    });
+  </script>
 </body>
 </html>
-
