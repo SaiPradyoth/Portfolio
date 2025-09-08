@@ -24,12 +24,15 @@
     h2 { border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
     .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: all 0.3s ease; }
     .card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+    /* Project cards */
     .project-card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
     .project-card:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
     .project-card .hover-detail { display: none; color: #555; font-style: italic; margin-top: 5px; }
     .project-card:hover .hover-detail { display: block; }
     .project-card .full-detail { display: none; margin-top: 15px; color: #333; }
     .project-card.active .full-detail { display: block; }
+
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
     footer { text-align: center; background: #222; color: #fff; padding: 20px; margin-top: 40px; }
     a.button { display: inline-block; padding: 10px 15px; background: #007BFF; color: #fff; border-radius: 4px; text-decoration: none; transition: background 0.3s; }
@@ -55,39 +58,102 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p>I am a Mechanical Engineer with expertise in CAD/CAE, PCB validation, Six Sigma optimization, and sustainable energy solutions. I specialize in transforming engineering concepts into manufacturable, reliable, and efficient solutions across aerospace, semiconductors, and biotech hardware.</p>
   </section>
 
+  <!-- EXPERIENCE -->
   <section id="experience">
     <h2>Experience</h2>
+
     <div class="card">
       <h3>Product & Mechanical Designer – Manakin Bio (2025 – Present)</h3>
       <p>• Reduced prototyping cycle time by 25% using Fusion 360/NX designs<br>
          • Cut assembly misfits by 40% with tolerance stack-ups & GD&T<br>
          • Collaborated cross-functionally, reducing redesign efforts by 20%</p>
     </div>
+
     <div class="card">
       <h3>Graduate Research Assistant – University of Idaho (2022 – 2024)</h3>
-      <p>• Led semiconductor thermal stress modeling with ABAQUS → improved reliability by 17%<br>
+      <p>• Modeled semiconductor thermal stress with ABAQUS/ANSYS → improved reliability by 17%<br>
          • Applied DFMEA, DOE, SPC → reduced process deviations by 28%<br>
-         • Automated Power BI dashboards to support prototype-to-production transition</p>
+         • Automated Power BI dashboards for prototype-to-production transfer<br>
+         • Improved fab maintenance with CMMS integration (on-time tasks ↑18%)</p>
     </div>
+
     <div class="card">
       <h3>Program Management Intern – Tata-Boeing Aerospace (2021)</h3>
-      <p>• Achieved 95% on-time delivery for Apache AH-64 programs<br>
-         • Boosted throughput by 12% via Lean workflow redesign<br>
-         • Enhanced supplier reliability by 10% with DFMEA/PFMEA integration</p>
+      <p>• Coordinated Apache fuselage production schedules → 95% on-time delivery<br>
+         • Boosted throughput by 12% with Lean workflow & Kanban redesign<br>
+         • Contributed to DFMEA/PFMEA improving compliance by 18%</p>
+    </div>
+
+    <div class="card">
+      <h3>Industrial Engineering Intern – Tata-Boeing Aerospace (2021)</h3>
+      <p>• Optimized shop layouts in AutoCAD/CATIA → reduced handling distance 15%<br>
+         • Built preventive maintenance schedules (CMMS) → equipment uptime ↑15%<br>
+         • Applied Kaizen & DMAIC → reduced rework by 7% and saved ~4 labor hrs/week</p>
+    </div>
+
+    <div class="card">
+      <h3>Undergraduate Research Assistant – Institute of Aeronautical Engineering (2019 – 2021)</h3>
+      <p>• Designed & simulated hypersonic aero-disk models in CATIA & ANSYS CFX<br>
+         • Conducted CFD & structural validation → reduced thermal stress & improved aerodynamic efficiency</p>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
-    <!-- same expandable projects as before (Fuel Cell, Six Sigma, Forecasting, Facility Layout) -->
-    <!-- ... keep your earlier project-card code here ... -->
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Electrolytic Hydrogen Fuel Cell Vehicle</h3>
+      <p class="brief">Optimized PEM fuel cell, improved efficiency by 15%.</p>
+      <p class="hover-detail">CFD simulations optimized hydrogen flow & durability.</p>
+      <div class="full-detail">
+        <p>Developed & optimized a PEM hydrogen fuel cell vehicle using ANSYS Fluent & MATLAB. 
+           Results: 15% efficiency increase, 20% improved stack stability. 
+           Skills: CFD, FEA, sustainable design.</p>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Six Sigma Check-Out Process Optimization</h3>
+      <p class="brief">Reduced checkout time by 65%, errors by 30%.</p>
+      <p class="hover-detail">Applied DMAIC to improve library workflows.</p>
+      <div class="full-detail">
+        <p>Led a Six Sigma Green Belt project improving university library checkout. 
+           Applied DMAIC, Fishbone, and hypothesis testing. 
+           Results: checkout time cut from 9 → 3 min, errors reduced 30%, user satisfaction improved.</p>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Forecasting & Inventory Simulation</h3>
+      <p class="brief">Improved forecast accuracy by 22%.</p>
+      <p class="hover-detail">Monte Carlo simulation on BOM-driven models.</p>
+      <div class="full-detail">
+        <p>Built inventory forecasting with Monte Carlo simulations (Python, Excel VBA). 
+           Accuracy improved by 22%, variability reduced 17%. 
+           Skills: stochastic modeling, supply chain optimization.</p>
+      </div>
+    </div>
+
+    <div class="project-card" onclick="toggleDetails(this)">
+      <h3>Facility Layout Optimization</h3>
+      <p class="brief">Reduced costs by 8% and improved ergonomics by 21%.</p>
+      <p class="hover-detail">Redesigned layouts with AutoCAD & Revit.</p>
+      <div class="full-detail">
+        <p>Modeled 3D assembly line layouts at Tata-Boeing with AutoCAD/Revit. 
+           Reduced handling distances by 15%, costs by 8%, ergonomics by 21%. 
+           Skills: Lean manufacturing, CAD layout design.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills-grid">
@@ -100,6 +166,7 @@
     </div>
   </section>
 
+  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <h2>Certifications</h2>
     <div class="card">Lean Six Sigma Black Belt & Green Belt</div>
@@ -110,12 +177,14 @@
     <div class="card">Mechatronics & BIM Coordination</div>
   </section>
 
+  <!-- EDUCATION -->
   <section id="education">
     <h2>Education</h2>
     <div class="card">M.E. in Mechanical Engineering – University of Idaho (2022–2024)</div>
     <div class="card">B.S. in Aeronautical Engineering – JNTU Hyderabad (2017–2021)</div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <p><i class="fas fa-envelope"></i> <a href="mailto:saipradyothgoparaju@gmail.com">saipradyothgoparaju@gmail.com</a></p>
